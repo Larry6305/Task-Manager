@@ -9,3 +9,7 @@ class Project(Base):
     description = Column(String)
     user_id = Column(Integer, ForeignKey("users.id"))
 
+    user = relationship("User", back_populates="projects")
+    tasks = relationship("Task", back_populates="project")
+
+
