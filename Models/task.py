@@ -10,3 +10,6 @@ class Task(Base):
     status = Column(String, default="Pending")
     project_id = Column(Integer, ForeignKey("projects.id"))
     category_id = Column(Integer, ForeignKey("categories.id"))
+
+project = relationship("Project", back_populates="tasks")
+category = relationship("Category", back_populates="tasks")
